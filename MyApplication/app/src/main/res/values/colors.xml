@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="forgot">#3F51B5</color>
+    <color name="lavender">#8692f7</color>
+    <color name="gray">#808080</color>
+    <color name="green">#008002</color>
+    <color name="red">#FF0000</color>
+    <color name="primary">#3F51B5</color>
+    <color name="night_mode">#6124B1</color>
+    <color name="notification">#13B2C3</color>
+    <color name="change_language">#FFEB3B</color>
+    <color name="about_us">#9C27B0</color>send_message
+    <color name="send_message">#F44336</color>
+    <color name="background">#CFE7FB</color>
+    <color name="speed">#0084FE</color>
+</resources>
