@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -46,9 +47,9 @@ public class Login extends AppCompatActivity {
         mLoginBinding.create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+                Intent intent = new Intent(getApplicationContext(), SignUp.class);
                 startActivity(intent);
-                finish();
+                Log.d("login", "onClick: haha");
             }
         });
 
@@ -87,8 +88,6 @@ public class Login extends AppCompatActivity {
                                 }
                             }
                         });
-
-
             }
         });
     }

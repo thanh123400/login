@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        mActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setContentView(mActivityMainBinding.getRoot());
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -45,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mActivityMainBinding.settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Settings.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

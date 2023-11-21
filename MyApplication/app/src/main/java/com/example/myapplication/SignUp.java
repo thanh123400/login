@@ -39,7 +39,7 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mSignUpBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        mSignUpBinding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up);
         setContentView(mSignUpBinding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
@@ -61,7 +61,7 @@ public class SignUp extends AppCompatActivity {
                 password = mSignUpBinding.Password.getText().toString();
                 password2 = mSignUpBinding.Password1.getText().toString();
 
-                if(password != password2){
+                if(!password.equals(password2)){
                     Toast.makeText(SignUp.this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -86,7 +86,7 @@ public class SignUp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(SignUp.this, "Authentication succes.", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), Login.class);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
